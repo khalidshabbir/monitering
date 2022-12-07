@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
+import {baseurl} from "../../baseurl/baseurl"
 import "./Login.css";
 
 const Login = () => {
@@ -10,7 +11,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("/login/users", {
+    const response = await fetch(baseurl+"/login/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
